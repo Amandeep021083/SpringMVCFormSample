@@ -40,6 +40,19 @@ pipeline {
 				
 				build job:'Deploy-to-Production'
 			}
+			
+			post{
+				
+				success{
+					
+					echo 'Deployment on PRODUCTION is Successful'
+				}
+				
+				failure{
+					
+					echo 'Deployment failure on PRODUCTION'
+				}
+			}
 		}
 	}
 }
